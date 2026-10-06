@@ -1,1 +1,3 @@
-console.log("Hello via Bun!");
+import postDiscord from "./postDiscord";
+
+postDiscord();
