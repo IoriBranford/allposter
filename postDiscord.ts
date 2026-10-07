@@ -1,15 +1,19 @@
-import { EmbedBuilder, WebhookClient } from 'discord.js'; 
-import { webhookId, webhookToken } from './config.json';
+import { WebhookClient } from 'discord.js'; 
+import { webhookId, webhookToken } from './config.test.json';
 
-export default function postDiscord() {
+export default async function postDiscord(
+    username: string,
+    messageFile: string,
+    attachmentFiles: string[] | undefined)
+{
     const webhookClient = new WebhookClient({ id: webhookId, token: webhookToken });
 
-    const embed = new EmbedBuilder().setTitle('Some Title').setColor(0x00ffff);
-
     webhookClient.send({
-        content: 'Webhook test',
-        username: 'some-username',
-        avatarURL: 'https://i.imgur.com/AfFp7pu.png',
-        embeds: [embed],
+        content: await Bun.file(messageFile).text(),
+        username,
+        files: attachmentFiles?.map(f => ({
+            attachment: f,
+            name: f.match(`([^/\]+)$`)?.[0]
+        }))
     });
 }
