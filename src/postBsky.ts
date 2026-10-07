@@ -1,7 +1,7 @@
 import { PasswordSession } from '@atproto/lex-password-session'
 import { Client, toDatetimeString } from '@atproto/lex'
-import * as app from './src/lexicons/app.js'
-import { bskyPassword } from './config.json'
+import * as app from './lexicons/app.js'
+import { bskyPassword } from '../config.json'
 
 export default async function postBsky(
     identifier: string,

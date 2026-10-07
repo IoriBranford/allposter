@@ -1,2 +1,2 @@
 #!/bin/fish
-bun run index.ts $argv
+bun run src/index.ts $argv

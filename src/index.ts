@@ -1,6 +1,6 @@
 import postBsky from "./postBsky";
 import postDiscord from "./postDiscord";
-import { bskyName, discordName } from './config.json'
+import { bskyName, discordName } from '../config.json'
 
 const args = Bun.argv.slice(2);
 const [to, post] = args;

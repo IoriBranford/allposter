@@ -1,5 +1,5 @@
 import { WebhookClient } from 'discord.js'; 
-import { webhookId, webhookToken } from './config.test.json';
+import { webhookId, webhookToken } from '../config.test.json';
 
 export default async function postDiscord(
     username: string,
