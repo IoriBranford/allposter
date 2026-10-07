@@ -33,6 +33,15 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 # Finder (MacOS) folder config
 .DS_Store
 
+# test message files
+*.txt
+*.png
+
 # files with tokens
 config.json
 config.*.json
+
+# bskybuild
+lexicons
+lexicons.json
+src/lexicons
