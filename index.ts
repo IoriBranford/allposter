@@ -1,4 +1,6 @@
+import postBsky from "./postBsky";
 import postDiscord from "./postDiscord";
+import { bskyName, discordName } from './config.json'
 
 const args = Bun.argv.slice(2);
 const [to, post] = args;
@@ -11,7 +13,10 @@ if (!post)
 
 switch (to) {
     case "discord":
-        postDiscord("UpdateBot", post, attach);
+        postDiscord(discordName, post, attach);
+        break;
+    case "bsky":
+        postBsky(bskyName, post, attach);
         break;
 
     default:
