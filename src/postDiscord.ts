@@ -1,8 +1,7 @@
 import { WebhookClient } from 'discord.js'; 
-import { webhookId, webhookToken } from '../config.test.json';
+import { discordName, webhookId, webhookToken } from '../config.discordtest.json';
 
 export default async function postDiscord(
-    username: string,
     messageFile: string,
     attachmentFiles: string[] | undefined)
 {
@@ -10,7 +9,7 @@ export default async function postDiscord(
 
     webhookClient.send({
         content: await Bun.file(messageFile).text(),
-        username,
+        username: discordName,
         files: attachmentFiles?.map(f => ({
             attachment: f,
             name: f.match(`([^/\]+)$`)?.[0]

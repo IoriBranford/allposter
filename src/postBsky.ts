@@ -1,16 +1,15 @@
 import { PasswordSession } from '@atproto/lex-password-session'
 import { Client, toDatetimeString } from '@atproto/lex'
 import * as app from './lexicons/app.js'
-import { bskyPassword } from '../config.json'
+import { bskyName, bskyPassword } from '../config.bsky.json'
 
 export default async function postBsky(
-    identifier: string,
     messageFile: string,
     attachmentFiles: string[] | undefined)
 {
     const session = await PasswordSession.login({
         service: 'https://bsky.social',
-        identifier,
+        identifier: bskyName,
         password: bskyPassword,
     })
 
