@@ -7,7 +7,7 @@ export default async function postDiscord(
 {
     const webhookClient = new WebhookClient({ id: webhookId, token: webhookToken });
 
-    webhookClient.send({
+    const response = await webhookClient.send({
         content: await Bun.file(messageFile).text(),
         username: discordName,
         files: attachmentFiles?.map(f => ({
@@ -15,4 +15,6 @@ export default async function postDiscord(
             name: f.match(`([^/\]+)$`)?.[0]
         }))
     });
+
+    console.log(response);
 }
