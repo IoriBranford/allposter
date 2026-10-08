@@ -1,5 +1,6 @@
 import postBsky from "./postBsky";
 import postDiscord from "./postDiscord";
+import postX from "./postX";
 
 const args = Bun.argv.slice(2);
 const [to, post] = args;
@@ -16,6 +17,10 @@ switch (to) {
         break;
     case "bsky":
         postBsky(post, attach);
+        break;
+    case "x":
+    case "twitter":
+        postX(post, attach);
         break;
 
     default:
