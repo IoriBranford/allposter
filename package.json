@@ -16,6 +16,8 @@
     "@atproto/lex": "^0.3.14",
     "@atproto/lex-password-session": "^0.2.4",
     "@xdevplatform/xdk": "^0.6.6",
-    "discord.js": "^14.27.0"
+    "discord.js": "^14.27.0",
+    "is-image": "^4.0.0",
+    "is-video": "^2.0.0"
   }
 }
