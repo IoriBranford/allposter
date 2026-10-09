@@ -36,6 +36,8 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 # test message files
 *.txt
 *.png
+*.jpg
+*.jpeg
 
 # files with tokens
 config.json
