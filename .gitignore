@@ -33,11 +33,13 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 # Finder (MacOS) folder config
 .DS_Store
 
-# test message files
+# message and attachment files
 *.txt
 *.png
 *.jpg
 *.jpeg
+*.mp4
+*.mkv
 
 # files with tokens
 config.json
